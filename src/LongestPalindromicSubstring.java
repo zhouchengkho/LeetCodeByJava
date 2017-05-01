@@ -21,11 +21,11 @@ public class LongestPalindromicSubstring {
 
 
     public String findPalindrome(int pivot, String s) {
-        int offset = 0;
+        int offset = isSharp(pivot) ? 0 : 1;
         int len = s.length();
         while(true) {
             int leftIndex = (pivot - 1) / 2 - offset;
-            int rightIndex = (pivot) / 2 + offset;
+            int rightIndex =(pivot) / 2 + offset;
             if(leftIndex < 0 || rightIndex >= len)
                 break;
             else if(s.charAt(leftIndex) != s.charAt(rightIndex)) {
@@ -34,14 +34,18 @@ public class LongestPalindromicSubstring {
             else offset++;
         }
         int left = (pivot - 1) / 2 - offset + 1 < 0 ? 0 : (pivot - 1) / 2 - offset + 1;
-        int right = (pivot + offset) / 2 >= len ? len - 1 : (pivot) / 2 + offset;
+        int right = (pivot) / 2 + offset  >= len ? len : (pivot) / 2 + offset ;
         return s.substring(left, right);
+    }
+
+    public boolean isSharp(int C) {
+        return C%2 == 0;
     }
 
     public static void main(String[] args) {
         // write your code here
         LongestPalindromicSubstring solution = new LongestPalindromicSubstring();
-         System.out.println(solution.longestPalindrome("dasadffffffff"));
+         System.out.println(solution.longestPalindrome("a"));
 
     }
 }
