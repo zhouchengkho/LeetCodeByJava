@@ -2,28 +2,41 @@ import java.util.*;
 import java.util.Arrays;
 
 public class ThreeSumClosest {
-    public List<List<Integer>> threeSumClosest(int[] nums) {
+    public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
-        List<List<Integer>> res = new LinkedList<>();
-//        for (int i = 0; i < nums.length-2; i++) {
-//            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) {
-//                int lo = i+1, hi = nums.length-1, sum = 0 - nums[i];
-//                while (lo < hi) {
-//                    if (nums[lo] + nums[hi] == sum) {
-//                        res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
-//                        while (lo < hi && nums[lo] == nums[lo+1]) lo++;
-//                        while (lo < hi && nums[hi] == nums[hi-1]) hi--;
-//                        lo++; hi--;
-//                    } else if (nums[lo] + nums[hi] < sum) lo++;
-//                    else hi--;
-//                }
-//            }
-//        }
-        return res;
+        int len = nums.length;
+        int min = nums[0] + nums[1] + nums[len-1] - target;
+        for(int i = 0;i<=len-1;i++) {
+            int j = i+1;
+            int k = len-1;
+            if(min == 0) {
+                break;
+            }
+            while(j < k) {
+                int newMin = nums[i] + nums[j] + nums[k] - target;
+                if(newMin < 0) {
+                    if(Math.abs(newMin) < Math.abs(min)) {
+                        min = newMin;
+                    }
+                    j++;
+                } else if (newMin > 0) {
+                    if(Math.abs(newMin) < Math.abs(min)) {
+                        min = newMin;
+                    }
+                    k--;
+                } else {
+                    min = 0;
+                    break;
+                }
+            }
+        }
+        return min+target;
     }
+    
     public static void main(String[] args) {
         ThreeSumClosest solution = new ThreeSumClosest();
-        int[] nums = {-1, 0, 1, 2, -1, -4};
-        System.out.println(solution.threeSumClosest(nums));
+        int[] nums ={-1, 2, 1, -4, 0};
+        int target = 1;
+        System.out.println(solution.threeSumClosest(nums, target));
     }
 }
