@@ -8,7 +8,7 @@ public class Heaters {
         Arrays.sort(houses);
         Arrays.sort(heaters);
         int i = 0;
-        int res = Math.abs(houses[0] - heaters[0]);
+        int res = 0;
         for(int house : houses) {
             while(i < heaters.length-1 && (heaters[i] + heaters[i+1]) < house * 2) {
                 i++;
