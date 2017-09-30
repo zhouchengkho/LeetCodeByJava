@@ -8,12 +8,10 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-        HashSet<Character> rows = new HashSet<Character>();
-        String[] names = {"a III", "a II", "a I", "b I"};
-        names = getSortedList(names);
-        for(int i = 0; i < names.length; i++) {
-            System.out.println(names[i]);
-        }
+        System.out.println(0%2);
+        System.out.println(1%2);
+        System.out.println(2%2);
+        System.out.println(3%2);
     }
 
     static String findNumber(int[] arr, int k) {
