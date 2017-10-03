@@ -8,13 +8,17 @@ import java.util.List;
  *
  * regex : see ReverseWordsInAString
  *
+ * proper binary search: see SearchATwoDMatrix
+ *
  * */
 public class Test {
     public static void main(String[] args) {
-        System.out.println(0%2);
-        System.out.println(1%2);
-        System.out.println(2%2);
-        System.out.println(3%2);
+        int test = 1;
+        int[] board = {1, 2, 3, 4};
+        System.out.println(board[0]);
+        System.out.println(board[0]^=256);
+        System.out.println(board[0]);
+        System.out.println(board[0]^=256);
     }
 
     static String findNumber(int[] arr, int k) {
