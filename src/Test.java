@@ -10,15 +10,25 @@ import java.util.List;
  *
  * proper binary search: see SearchATwoDMatrix
  *
+ *
+ * char to int (int) ch - 48
+ *
+ * Integer.parseInt
+ *
+ * intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
+ *
  * */
 public class Test {
     public static void main(String[] args) {
-        int test = 1;
-        int[] board = {1, 2, 3, 4};
-        System.out.println(board[0]);
-        System.out.println(board[0]^=256);
-        System.out.println(board[0]);
-        System.out.println(board[0]^=256);
+        System.out.println((int)'1');
+
+        int[][] b = {{1,1},{1,1}};
+        change(b);
+        System.out.println(b[0][0]);
+    }
+
+    static void change(int[][] b) {
+        b[0][0] = 2;
     }
 
     static String findNumber(int[] arr, int k) {
