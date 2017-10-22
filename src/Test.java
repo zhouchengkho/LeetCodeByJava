@@ -11,9 +11,30 @@ import java.util.List;
  * proper binary search: see SearchATwoDMatrix
  *
  *
+ *
+ * // parse char to int
  * char to int (int) ch - 48
  *
+ *
+ * // parse things to int
  * Integer.parseInt
+ *
+ *
+ *
+ * // int to string
+ * String.valueOf()
+ *
+ *
+ *
+ * Queue<TreeNode> q = new LinkedList<>();
+ *
+ *
+ *
+ * // map iteration
+ * for (Map.Entry<String, String> entry : h.entrySet())
+ * {
+ *      System.out.println(entry.getKey() + "/" + entry.getValue());
+ * }
  *
  * intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
  *

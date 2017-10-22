@@ -14,11 +14,12 @@ public class CombinationSumTwo {
     }
 
     private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] candidates, int remain, int start) {
-        if(remain == 0 && !list.contains(tempList)) {list.add(new ArrayList<>(tempList));}
+        if(remain == 0) {list.add(new ArrayList<>(tempList));}
         else if(remain < 0) {return;}
         else {
             // remain > 0
             for(int i = start;i < candidates.length; i++) {
+                if(i > start && candidates[i] == candidates[i-1]) continue;
                 tempList.add(candidates[i]);
                 backtrack(list, tempList, candidates, remain-candidates[i], i+1);
                 tempList.remove(tempList.size() - 1);
