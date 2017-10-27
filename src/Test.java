@@ -42,10 +42,10 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         System.out.println((int)'1');
+        String s = "ab c";
+        System.out.println(s.substring(0, s.indexOf(' ')));
+        System.out.println(s.substring(s.indexOf(' ')+1));
 
-        int[][] b = {{1,1},{1,1}};
-        change(b);
-        System.out.println(b[0][0]);
     }
 
     static void change(int[][] b) {
