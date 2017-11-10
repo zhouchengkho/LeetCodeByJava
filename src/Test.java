@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 /**
  * useful stuff
@@ -36,15 +33,22 @@ import java.util.List;
  *      System.out.println(entry.getKey() + "/" + entry.getValue());
  * }
  *
+ * // set iteration
+ * for(Type t : set) {}
+ *
  * intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
  *
  * */
 public class Test {
     public static void main(String[] args) {
-        System.out.println((int)'1');
-        String s = "ab c";
-        System.out.println(s.substring(0, s.indexOf(' ')));
-        System.out.println(s.substring(s.indexOf(' ')+1));
+        double test = -123;
+        StringBuilder sb = new StringBuilder();
+        System.out.println(Math.floor(test/10));
+
+        Queue<Character> q = new LinkedList<>();
+        q.remove();
+        Set<String> set = new HashSet<>();
+
 
     }
 

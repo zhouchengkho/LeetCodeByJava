@@ -9,6 +9,7 @@ public class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
         List<String> list = new ArrayList<>();
         backtrack(list, "", 0, 0, n);
+        Map<Character, Character> m = new HashMap<>();
         return list;
     }
 
