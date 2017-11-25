@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 
 /**
@@ -38,19 +41,36 @@ import java.util.*;
  *
  * intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
  *
+ *
+ *
+ * bit manipulation
+ * a << b, mv a's bit to left b bits
+ * a >> b, mv a's bit to right b bits
+ *
+ *
+ *
  * */
 public class Test {
     public static void main(String[] args) {
-        double test = -123;
-        StringBuilder sb = new StringBuilder();
-        System.out.println(Math.floor(test/10));
 
-        Queue<Character> q = new LinkedList<>();
-        q.remove();
-        Set<String> set = new HashSet<>();
+        System.out.println(0 | 1<<2);
 
 
     }
+
+    static boolean isBefore(String d1, String d2){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = null; Date date2 = null;
+        try
+        {
+            date1 = format.parse(d1); date2 = format.parse(d2);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return date1.before(date2);
+    }
+
 
     static void change(int[][] b) {
         b[0][0] = 2;
