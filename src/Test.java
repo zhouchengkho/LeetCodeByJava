@@ -53,8 +53,7 @@ import java.util.*;
 public class Test {
     public static void main(String[] args) {
 
-        System.out.println(0 | 1<<2);
-
+        List<Integer> test = new LinkedList<>();
 
     }
 
