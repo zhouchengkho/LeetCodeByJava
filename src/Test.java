@@ -52,9 +52,20 @@ import java.util.*;
  * */
 public class Test {
     public static void main(String[] args) {
+        TreeMap<Integer, String> map = new TreeMap<>();
 
-        List<Integer> test = new LinkedList<>();
+        int[] nums = {75, 72};
+        put(nums, map);
 
+
+        System.out.println(map.ceilingEntry(68));
+        Map.Entry<Integer, String> e = map.ceilingEntry(68);
+    }
+
+    private static void put(int[] nums, TreeMap<Integer, String> map) {
+        for(int i = 0; i < nums.length; i++) {
+            map.put(nums[i], String.valueOf(i));
+        }
     }
 
     static boolean isBefore(String d1, String d2){
