@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by zhoucheng on 12/24/17.
  */
@@ -35,6 +37,27 @@ public class Greedy {
         }
     }
 
+    public int findMinArrowShots(int[][] points) {
+        if(points.length == 0) return 0;
+        if(points.length == 1) return 1;
+        Arrays.sort(points, (x, y) -> (x[1] - y[1]));
+        // int min = points[0][0];
+        int max = points[0][1];
+        int count = 0;
+        for(int i = 1; i < points.length; i++) {
+            if(points[i][0] <= max) {
+                // overlaps, can be shot together
+                // since sorted by max, no need to change it
+            } else {
+                // fire this shot
+                count++;
+                // aim for the next overlapping
+                // min = points[i][0];
+                max = points[i][1];
+            }
+        }
+        return count + 1;
+    }
     public static void main(String[] args) {
         Greedy sol = new Greedy();
         int[] f = new int[3];

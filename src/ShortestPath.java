@@ -1,12 +1,16 @@
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by zhoucheng on 12/26/17.
  */
 public class ShortestPath {
     public int networkDelayTime(int[][] times, int N, int K) {
+
+        String[] words = {};
+        List<String> ls = Arrays.asList(words);
+        ls.sort((x, y) -> (x.length() <= y.length() ? 1 : -1));
+
+
         // u, v, w
         TreeMap<Integer, TreeMap<Integer, Integer>> map = new TreeMap<>();
         TreeMap<Integer, Integer> tree = new TreeMap<>();
