@@ -52,9 +52,32 @@ import java.util.*;
  * */
 public class Test {
     public static void main(String[] args) {
+
+        Map<String, String> parent = new HashMap<>();
+        Map<String, TreeSet<String>> union = new HashMap<>();
+        Map<String, String> owner = new HashMap<>(); // each email has owner
+
+
+        TreeSet<String> set = new TreeSet<>();
+
+
+        List<List<String>> res = new LinkedList<>();
+
+        // 4. transform union to list with the help of owner
+        for(Map.Entry<String, TreeSet<String>> e : union.entrySet()) {
+            String own = owner.get(e.getKey());
+            res.add(new LinkedList<>());
+            res.get(res.size() - 1).add(own);
+
+        }
+
+
+
+        List<Integer> ls = new LinkedList<>();
         TreeMap<Integer, String> map = new TreeMap<>();
 
-        int[] nums = {75, 72};
+        int[] nums = {1, 2};
+
         put(nums, map);
 
 
