@@ -49,40 +49,20 @@ import java.util.*;
  *
  *
  *
+ * reverse iterate tree map
+ * Map<String, String> treemap =
+ * new TreeMap<String, String>(Collections.reverseOrder());
+ *
  * */
 public class Test {
     public static void main(String[] args) {
+        Integer[] ans = new Integer[20];
 
-        Map<String, String> parent = new HashMap<>();
-        Map<String, TreeSet<String>> union = new HashMap<>();
-        Map<String, String> owner = new HashMap<>(); // each email has owner
+        int i = 0;
+        Queue<int[]> ls = new LinkedList<>();
+        String p = "abc";
+        ls.offer(new int[]{(int)p.charAt(i), 2});
 
-
-        TreeSet<String> set = new TreeSet<>();
-
-
-        List<List<String>> res = new LinkedList<>();
-
-        // 4. transform union to list with the help of owner
-        for(Map.Entry<String, TreeSet<String>> e : union.entrySet()) {
-            String own = owner.get(e.getKey());
-            res.add(new LinkedList<>());
-            res.get(res.size() - 1).add(own);
-
-        }
-
-
-
-        List<Integer> ls = new LinkedList<>();
-        TreeMap<Integer, String> map = new TreeMap<>();
-
-        int[] nums = {1, 2};
-
-        put(nums, map);
-
-
-        System.out.println(map.ceilingEntry(68));
-        Map.Entry<Integer, String> e = map.ceilingEntry(68);
     }
 
     private static void put(int[] nums, TreeMap<Integer, String> map) {
